@@ -1,3 +1,7 @@
 from django.contrib import admin
+from campingapp.models import Camping
 
-# Register your models here.
+
+@admin.register(Camping)
+class CampingAdmin(admin.ModelAdmin):
+    pass

@@ -56,3 +56,9 @@ class AccountSignInForm(forms.Form):
 
         except get_user_model().DoesNotExist:
             self.add_error("email", forms.ValidationError("이메일이 존재하지않음"))
+
+
+class AccountUpdateForm(AccoutSignUpForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["email"].disabled = True

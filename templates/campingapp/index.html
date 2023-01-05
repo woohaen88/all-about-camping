@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container mt-5">
+{% for camping in camping_list %}
+<div>캠핑장이름: <a href="{{ camping.get_absolute_url }}">{{ camping.name }}</a></div>
+<div>캠핑장내용: {{ camping.content }}</div>
+    <div><img src="{{ camping.image.url }}" alt=""></div>
+<div>캠핑장방문날짜: {{ camping.visited_dt | date:"Y-m-d" }}</div>
+<div>작성장 : {{ camping.user.email }}</div>
+    <hr class="mt-2">
+
+{% endfor %}
+</div>
+
+{% endblock %}
