@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     # Installed apps
     "accountapp.apps.AccountappConfig",
     "campingapp.apps.CampingappConfig",
+    # 3rd apps
+    "bootstrap4",
 ]
 
 MIDDLEWARE = [
@@ -122,7 +124,7 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
-STATICFILES_DIR = [os.path.join(BASE_DIR, "aboutCamping", "static")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "aboutCamping", "static")]
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Default primary key field type
@@ -135,3 +137,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
 LOGIN_REDIRECT_URL = reverse_lazy("index")
 LOGOUT_REDIRECT_URL = reverse_lazy("accountapp:login")
+
+ACCOUNT_AUTHENTICATION_METHOD = "email"
