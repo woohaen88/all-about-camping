@@ -8,7 +8,8 @@ WORKDIR /home/all-about-camping/
 
 RUN pip install -r requirements.txt
 
-RUN python manage.py migrate
+RUN python manage.py makemigrations && \
+    python manage.py migrate
 
 EXPOSE 8000
 
