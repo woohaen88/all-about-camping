@@ -1,16 +1,17 @@
 {% extends 'layout.html' %}
 {% block content %}
-<div class="container mt-5">
+    <div class="container mt-5">
 
-    <div>캠핑장이름: {{ detail_camping.name }}</div>
-    <a href="{{ detail_camping.get_update_url }}">수정</a>
-<div>캠핑장내용: {{ detail_camping.content }}</div>
-    <div><img src="{{ detail_camping.image.url }}" alt=""></div>
-<div>캠핑장방문날짜: {{ detail_camping.visited_dt | date:"Y-m-d" }}</div>
-<div>작성장 : {{ detail_camping.user.email }}</div>
-    <hr class="mt-2">
+        <div>캠핑장이름: {{ detail_camping.name }}</div>
+        <a href="{{ detail_camping.get_update_url }}">수정</a>
+        <a href="{{ detail_camping.get_delete_url }}">삭제</a>
+        <div>캠핑장내용: {{ detail_camping.content }}</div>
+        <div><img src="{{ detail_camping.image.url }}" alt=""></div>
+        <div>캠핑장방문날짜: {{ detail_camping.visited_dt | date:"Y-m-d" }}</div>
+        <div>작성장 : {{ detail_camping.user.email }}</div>
+        <hr class="mt-2">
 
 
-</div>
+    </div>
 
 {% endblock %}

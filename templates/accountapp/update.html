@@ -1,9 +1,9 @@
 {% extends 'layout.html' %}
 {% block content %}
-<h1>업데이트</h1>
+    <h1>업데이트</h1>
     <form action="{% url 'accountapp:update' target_user.pk %}" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">확인</button>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">확인</button>
     </form>
 {% endblock %}

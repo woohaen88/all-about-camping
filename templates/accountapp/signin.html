@@ -1,12 +1,12 @@
 {% extends 'layout.html' %}
 {% load bootstrap4 %}
 {% block content %}
-<h1>로그인</h1>
+    <h1>로그인</h1>
     <div class="col-md-8">
-    <form action="{% url 'accountapp:signin' %}" method="post">
-    {% csrf_token %}
-    {% bootstrap_form form %}
-    <button type="submit" class="btn btn-dark mt-3 col-md-6 ">확인</button>
-    </form>
+        <form action="{% url 'accountapp:signin' %}" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-dark mt-3 col-md-6 ">확인</button>
+        </form>
     </div>
 {% endblock %}

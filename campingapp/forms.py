@@ -3,7 +3,7 @@ from campingapp.models import Camping
 
 
 class CampingCreateForm(forms.ModelForm):
-    image = forms.ImageField(widget=forms.FileInput())
+    image = forms.ImageField(widget=forms.FileInput(attrs={"type": "file"}))
     visited_dt = forms.DateTimeField(widget=forms.DateTimeInput(attrs={"type": "date"}))
 
     class Meta:
